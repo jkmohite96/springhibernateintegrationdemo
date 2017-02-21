@@ -86,7 +86,7 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
-
+<!-- Just add respective JAR for HSQLDB from buildpath -->
 
 	</dependencies>
 </project>
