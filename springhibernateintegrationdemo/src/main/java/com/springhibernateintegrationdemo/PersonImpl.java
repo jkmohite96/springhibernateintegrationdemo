@@ -14,10 +14,13 @@ public class PersonImpl {
 	}
 	
 	
-	public void save() {
-		Person p = new Person();
-		p.setName("ABCD");
-		p.setCountry("India");
+	public void save(Person p) {
+		System.out.println(p.getCountry());
+		System.out.println(p.getId());
+		System.out.println(p.getName());
+		
+		p.setName("yyyyyX");
+		p.setCountry("India...");
 		
 		Session session = this.sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
@@ -31,7 +34,7 @@ public class PersonImpl {
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		PersonImpl personDAO = context.getBean(PersonImpl.class);
-		personDAO.save();
+		personDAO.save((Person)context.getBean("person"));
 	}
 	
 }
